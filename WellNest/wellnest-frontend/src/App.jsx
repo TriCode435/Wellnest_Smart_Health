@@ -12,6 +12,7 @@ import BMIPage from './pages/user/BMIPage';
 import ProfilePage from './pages/user/ProfilePage';
 import TrainerDashboard from './pages/trainer/TrainerDashboard';
 import UserDetailDashboard from './pages/trainer/UserDetailDashboard';
+import AthleteInsightPage from './pages/trainer/AthleteInsightPage';
 
 import AdminDashboard from './pages/admin/AdminDashboard';
 
@@ -92,6 +93,14 @@ function App() {
             element={
               <ProtectedRoute allowedRoles={['TRAINER']}>
                 <UserDetailDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/trainer/athlete-insight/:userId"
+            element={
+              <ProtectedRoute allowedRoles={['TRAINER']}>
+                <AthleteInsightPage />
               </ProtectedRoute>
             }
           />

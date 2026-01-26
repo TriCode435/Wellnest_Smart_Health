@@ -58,6 +58,8 @@ const TrainerDashboard = () => {
             <div className="grid grid-cols-3 gap-8">
                 {[
                     { icon: <Users size={28} />, label: 'Active Clients', value: assignedUsers.length, bg: 'linear-gradient(135deg, #2563eb 0%, #60a5fa 100%)', shadow: 'rgba(37, 99, 235, 0.2)' },
+                    { icon: <Activity size={28} />, label: 'Assignments', value: '142', bg: 'var(--primary-gradient)', shadow: 'rgba(20, 184, 166, 0.2)' },
+                    { icon: <TrendingUp size={28} />, label: 'Completion Rate', value: '89%', bg: 'linear-gradient(135deg, #22c55e 0%, #4ade80 100%)', shadow: 'rgba(34, 197, 94, 0.2)' },
                 ].map((stat, idx) => (
                     <motion.div
                         key={idx}
@@ -141,30 +143,17 @@ const TrainerDashboard = () => {
                                     <div style={{ padding: '0.25rem 0.75rem', background: 'rgba(20, 184, 166, 0.1)', color: 'var(--primary)', fontSize: '10px', fontWeight: 900, borderRadius: '999px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Healthy</div>
                                 </div>
                             </div>
-                            <div className="flex border-t border-slate-100">
-                                <Link
-                                    to={`/trainer/user-details/${u.id}`}
-                                    style={{
-                                        flex: 1, padding: '1rem', background: '#f8fafc',
-                                        textAlign: 'center', fontWeight: 900, fontSize: '10px',
-                                        textTransform: 'uppercase', letterSpacing: '0.2em', color: '#94a3b8',
-                                        textDecoration: 'none', borderRight: '1px solid #f1f5f9'
-                                    }}
-                                >
-                                    Manage Plan
-                                </Link>
-                                <Link
-                                    to={`/trainer/athlete-insight/${u.id}`}
-                                    style={{
-                                        flex: 1, padding: '1rem', background: 'white',
-                                        textAlign: 'center', fontWeight: 900, fontSize: '10px',
-                                        textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--primary)',
-                                        textDecoration: 'none'
-                                    }}
-                                >
-                                    View Insight
-                                </Link>
-                            </div>
+                            <Link
+                                to={`/trainer/user-details/${u.id || idx}`}
+                                style={{
+                                    display: 'block', padding: '1rem', background: '#f8fafc',
+                                    textAlign: 'center', fontWeight: 900, fontSize: '10px',
+                                    textTransform: 'uppercase', letterSpacing: '0.3em', color: '#94a3b8',
+                                    textDecoration: 'none', borderTop: '1px solid #f1f5f9'
+                                }}
+                            >
+                                Manage Plan
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
