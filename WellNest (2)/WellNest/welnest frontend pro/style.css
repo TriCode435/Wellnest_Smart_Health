@@ -1,0 +1,242 @@
+/* 1. Global Styles & Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #4ade80;
+    --bg-dark: #0a0a0a;
+    --card-bg: #141414;
+    --text-white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, .logo { 
+    font-family: 'Bebas Neue', sans-serif; 
+    letter-spacing: 2px; 
+}
+
+/* 2. Navbar */
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo span { color: var(--primary-color); font-weight: bold; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li a { color: white; text-decoration: none; margin: 0 15px; transition: 0.3s; }
+nav ul li a:hover { color: var(--primary-color); }
+
+/* 3. Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10%;
+    height: 85vh;
+}
+
+.hero-content { flex: 1; }
+.hero-image { flex: 1; text-align: right; }
+.hero-image img { width: 100%; max-width: 500px; }
+
+.highlight { color: var(--primary-color); font-size: 2.5rem; }
+
+/* Typing Cursor Animation */
+.cursor {
+    color: #4ade80;
+    font-weight: bold;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* 4. Buttons */
+.join-btn-fill {
+    background: var(--primary-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.join-btn-fill:hover { transform: scale(1.05); background: #3ccb71; }
+
+.join-btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.join-btn-outline:hover { background: var(--primary-color); color: black; }
+
+/* 5. Service Cards */
+.services { padding: 80px 10%; text-align: center; }
+.services h2 span { color: var(--primary-color); }
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 0;
+}
+
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.service-card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
+.service-card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+/* 6. ABOUT US (Side-by-Side Layout Fix) */
+.about-us {
+    padding: 80px 10%;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.about-image { flex: 1; }
+.about-image img { width: 100%; border-radius: 15px; border: 1px solid #333; }
+
+.about-content { flex: 1; }
+.about-content h2 span { color: var(--primary-color); }
+.about-content p { color: #ccc; line-height: 1.6; margin: 20px 0; }
+
+.about-features { list-style: none; padding: 0; }
+.about-features li { display: flex; align-items: center; margin-bottom: 15px; }
+.about-features i { 
+    color: var(--primary-color); 
+    margin-right: 15px; 
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* 7. Pricing Section */
+.pricing { padding: 80px 10%; text-align: center; }
+.pricing h2 span { color: var(--primary-color); }
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.price-card {
+    background: #141414;
+    border: 1px solid #333;
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 280px;
+    transition: 0.4s;
+    position: relative;
+}
+
+.price-card:hover { border-color: #4ade80; transform: translateY(-10px); }
+.price-card.popular { border: 2px solid #4ade80; transform: scale(1.05); }
+
+.badge {
+    background: #4ade80;
+    color: #000;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.price { font-size: 3rem; font-weight: bold; margin: 20px 0; }
+.price span { font-size: 1rem; color: #aaa; }
+
+.price-card ul { list-style: none; padding: 0; margin-bottom: 30px; text-align: left; }
+.price-card ul li { margin: 15px 0; color: #ccc; }
+.price-card ul li i { margin-right: 10px; }
+.fa-check { color: #4ade80; }
+.fa-times { color: #ff4d4d; }
+
+/* 8. Review Section Styling */
+.reviews { padding: 80px 10%; text-align: center; }
+.reviews h2 span { color: var(--primary-color); }
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 40px;
+}
+
+.review-card {
+    background: #141414;
+    border: 1px solid #333;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 300px;
+    transition: 0.3s;
+}
+
+.profile-img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #4ade80;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.stars { color: #f1c40f; margin-bottom: 10px; }
+
+/* 9. RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    nav ul { display: none; }
+    
+    .hero, .about-container {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .hero-image, .about-image { text-align: center; margin-top: 30px; }
+    
+    .about-features li { justify-content: center; }
+}
